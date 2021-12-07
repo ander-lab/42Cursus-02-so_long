@@ -6,12 +6,12 @@
 #    By: ajimenez <ajimenez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/04 15:26:16 by ajimenez          #+#    #+#              #
-#    Updated: 2021/12/07 17:28:20 by ajimenez         ###   ########.fr        #
+#    Updated: 2021/12/07 17:58:09 by ajimenez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -g 
+CFLAGS	= -Wall -Wextra -Werror
 MLXFLGS = -framework OpenGL -framework AppKit
 SAN		= -fsanitize=address
 LIB 	= ar -rcs
@@ -22,7 +22,7 @@ LIBP	= so_long.a
 LIBMLX	= ./mlx/libmlx.a
 
 NAME 	= so_long
-SRCS	= srcs/main.c srcs/key_parser.c srcs/map_parser.c srcs/map_checker.c 
+SRCS	= srcs/main.c srcs/key_parser.c srcs/map_checker.c 
 
 OBJS	= $(SRCS:.c=.o)
 COMP	= $(CC) $(CFLAGS) $(SRCS) $(LIBMLX) $(MLXFLGS) -o $(NAME)
@@ -52,6 +52,7 @@ fsanitize:			$(OBJS)
 clean:
 					@make clean -sC ./libft
 					$(RM) $(OBJS) $(OBJS_B)
+					@rm libft.a libmlx.a
 
 fclean: 	clean
 					@make fclean -sC ./libft
