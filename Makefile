@@ -6,7 +6,7 @@
 #    By: ajimenez <ajimenez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/04 15:26:16 by ajimenez          #+#    #+#              #
-#    Updated: 2021/12/07 17:58:09 by ajimenez         ###   ########.fr        #
+#    Updated: 2021/12/09 09:40:53 by ajimenez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,9 @@ SAN		= -fsanitize=address
 LIB 	= ar -rcs
 RM		= /bin/rm -rf
 
-LIBFT	= ./libft/libft.a
+LIBFT	= ./includes/libft/libft.a
 LIBP	= so_long.a 
-LIBMLX	= ./mlx/libmlx.a
+LIBMLX	= ./includes/mlx/libmlx.a
 
 NAME 	= so_long
 SRCS	= srcs/main.c srcs/key_parser.c srcs/map_checker.c 
@@ -32,19 +32,20 @@ all: 		$(NAME)
 
 $(NAME):			$(OBJS)
 					@echo "\n\033[33mMaking libft! ░░░░░░ /(._.)\ ░░░░░\033[39m\n"
-					@make -sC ./libft
-					@make -C ./mlx
-					@cp mlx/libmlx.a ./
-					@cp libft/libft.a ./
+					@make -sC ./includes/libft
+					@make -C ./includes/mlx
+					@cp ./includes/mlx/libmlx.a ./
+					@cp ./includes/libft/libft.a ./
 					$(LIB) $(LIBP) $(OBJS)
 					$(COMP) 
 					@echo "\n\033[1;32mEverything done! ░░░░░░ ＼(>o<)ノ ░░░░░\033[39m\n"
 
 fsanitize:			$(OBJS)
 					@echo "\n\033[33mMaking libft! ░░░░░░ /(ಠ_ಠ)\ ░░░░░\033[39m\n"
-					@make -sC ./libft
-					@make -C ./mlx
-					@cp libft/libft.a ./
+					@make -sC ./includes/libft
+					@make -C ./includes/mlx
+					@cp /includes/mlx/libmlx.a ./
+					@cp /includes/libft/libft.a ./
 					$(LIB) $(LIBP) $(OBJS)
 					$(SANCOMP)
 					@echo "\n\033[1;32mEverything done! ░░░░░░ ＼(>o<)ノ ░░░░░\033[39m\n"

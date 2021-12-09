@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajimenez <ajimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/04 15:54:59 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/09 09:36:16 by ajimenez         ###   ########.fr       */
+/*   Created: 2021/11/24 15:45:54 by ajimenez          #+#    #+#             */
+/*   Updated: 2021/11/24 15:48:45 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
-
-# include <fcntl.h>
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include "mlx/mlx.h"
-# include "libft/libft.h"
-
-typedef struct	s_vars {
-	void	*mlx;
-	void	*win;
-}				t_vars;
-
-
-int	close_mlx(t_vars *vars);
-int	key_hook(int keycode, t_vars *vars);
-
-#endif
+int	ft_isspace(int c)
+{
+	if (c == 32 || c == 9)
+		return (1);
+	return (0);
+}
