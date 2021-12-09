@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_map.c                                          :+:      :+:    :+:   */
+/*   map_checker.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:29:11 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/09 13:44:30 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/09 13:36:09 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../includes/so_long.h"
 
 static size_t ft_lines_of_map(char **av)
 {
