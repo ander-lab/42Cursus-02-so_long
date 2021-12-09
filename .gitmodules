@@ -1,3 +1,6 @@
 #[submodule "libft"]
 	#path = ./includes/libft
 	#url = git@github.com:ander-lab/42Cursus-00-Libft.git
+[submodule "includes/libft"]
+	path = includes/libft
+	url = https://github.com/ander-lab/42Cursus-00-Libft
