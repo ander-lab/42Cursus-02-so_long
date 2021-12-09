@@ -6,13 +6,13 @@
 /*   By: ajimenez <ajimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 15:45:26 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/07 17:26:57 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/09 09:43:41 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int	main(void)
+int	main(int ac, char **av)
 {
 	t_vars	vars;
 
