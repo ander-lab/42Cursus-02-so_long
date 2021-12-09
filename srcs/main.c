@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 15:45:26 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/09 09:43:41 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/09 10:56:23 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@ int	main(int ac, char **av)
 {
 	t_vars	vars;
 
+	if (ac != 2)
+		return (0);
+	check_map(av);
 	vars.mlx = mlx_init();
 	vars.win = mlx_new_window(vars.mlx, 1920, 1080, "Hello world!");
 	mlx_hook(vars.win, 17, 1L<<1, close_mlx, &vars);
