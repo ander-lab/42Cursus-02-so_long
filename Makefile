@@ -6,7 +6,7 @@
 #    By: ajimenez <ajimenez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/04 15:26:16 by ajimenez          #+#    #+#              #
-#    Updated: 2021/12/09 16:26:18 by ajimenez         ###   ########.fr        #
+#    Updated: 2021/12/10 14:40:44 by ajimenez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ LIBP	= so_long.a
 
 NAME 	= so_long
 
-MAP 	= srcs/map/get_map.c srcs/map/map_checker.c
+MAP 	= srcs/map/get_map.c srcs/map/map_checker.c srcs/map/map_errors.c
 SRCS	= srcs/main.c srcs/key_parser.c $(MAP) 
 
 OBJS	= $(SRCS:.c=.o)

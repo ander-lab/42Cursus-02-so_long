@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 15:54:59 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/10 11:16:56 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/10 14:47:56 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 # include <stdlib.h>
 # include "mlx/mlx.h"
 # include "libft/libft.h"
+
+#define INVALID_CHAR 0
+#define INVALID_REC 1
 
 typedef struct	s_vars {
 	void	*mlx;

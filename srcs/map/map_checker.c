@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:29:11 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/10 12:11:04 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/10 14:50:38 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,7 @@ static int	ft_isinvalid(int c)
 
 void	check_map(t_vars *ps, char **av)
 {
-	int		i;
-	char	*str_aux;
-
-	i = 0;
-	str_aux = 0;
 	ps->map = get_map(av);
 	if (ft_iter_matrix_bool(ps->map, ft_isinvalid))
-		map_errors(0);
+		map_errors(INVALID_CHAR);
 }
