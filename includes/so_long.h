@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 15:54:59 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/09 13:38:18 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/10 11:16:56 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,13 @@ typedef struct	s_vars {
 
 int		close_mlx(t_vars *vars);
 int		key_hook(int keycode, t_vars *vars);
+
+/*
+** Map ft's
+*/
+
 char	**get_map(char **av);
+void	check_map(t_vars *ps, char **av);
+void	map_errors(int c);
 
 #endif

@@ -6,49 +6,27 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:29:11 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/09 13:36:09 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/10 12:11:04 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../../includes/so_long.h"
 
-static size_t ft_lines_of_map(char **av)
+static int	ft_isinvalid(int c)
 {
-	int		fd;
-	char	*line;
-	size_t	i;
-
-	i = 0;
-	fd = open(av[1], O_RDONLY);
-	line = get_next_line(fd);
-	while (line)
-	{
-		line = get_next_line(fd);
-		free(line);
-		i++;
-	}
-	close(fd);
-	return (i + 1);
+	if (c != '0' && c != '1' && c != 'E' && c != 'P' && c != 'C')
+		return (1);
+	return (0);
 }
 
-char	**get_map(char **av)
+void	check_map(t_vars *ps, char **av)
 {
-	int		fd;
-	char	*line;
-	char	**map;
-	size_t	i;
+	int		i;
+	char	*str_aux;
 
 	i = 0;
-	map = ft_calloc(ft_lines_of_map(av), sizeof(char *));
-	fd = open(av[1], O_RDONLY);
-	line = get_next_line(fd);
-	while (line)
-	{
-		map[i] = ft_calloc(ft_strlen(line) + 1, sizeof(char));
-		ft_strcpy(map[i], line);
-		free(line);
-		line = get_next_line(fd);
-		i++;
-	}
-	return (map);
+	str_aux = 0;
+	ps->map = get_map(av);
+	if (ft_iter_matrix_bool(ps->map, ft_isinvalid))
+		map_errors(0);
 }
