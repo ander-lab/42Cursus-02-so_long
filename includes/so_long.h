@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 15:54:59 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/10 14:47:56 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/12 14:54:58 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 
 #define INVALID_CHAR 0
 #define INVALID_REC 1
+#define INVALID_ACCESS 2
 
 typedef struct	s_vars {
 	void	*mlx;

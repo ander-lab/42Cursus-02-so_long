@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:29:11 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/10 11:09:52 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/12 17:35:44 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static size_t ft_lines_of_map(char **av)
 	i = 0;
 	fd = open(av[1], O_RDONLY);
 	if (fd == -1)
-		exit(1);
+		map_errors(INVALID_ACCESS);
 	line = get_next_line(fd);
 	while (line)
 	{
@@ -31,6 +31,19 @@ static size_t ft_lines_of_map(char **av)
 	}
 	close(fd);
 	return (i + 1);
+}
+
+static char	*strcpy_to_line(char *map, char *line)
+{
+	int j = 0;
+	map = ft_calloc(ft_strlen(line), sizeof(char));
+	while(line[j] != '\n')
+	{
+		map[j] = line[j];
+		j++;
+	}
+	map[j] = '\0';
+	return (map);
 }
 
 char	**get_map(char **av)
@@ -44,21 +57,15 @@ char	**get_map(char **av)
 	map = ft_calloc(ft_lines_of_map(av), sizeof(char *));
 	fd = open(av[1], O_RDONLY);
 	if (fd == -1)
-		exit(1);
+		map_errors(INVALID_ACCESS);
 	line = get_next_line(fd);
 	while (line)
 	{
-		map[i] = ft_calloc(ft_strlen(line), sizeof(char));
-		int j = 0;
-		while(line[j] != '\n')
-		{
-			map[i][j] = line[j];
-			j++;
-		}
-		map[i][j] = '\0';
+		map[i] = strcpy_to_line(map[i], line);
 		free(line);
 		line = get_next_line(fd);
 		i++;
 	}
+	//ft_putmatrix(map, ft_matrixlen(map));
 	return (map);
 }
