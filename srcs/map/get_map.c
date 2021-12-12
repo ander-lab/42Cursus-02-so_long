@@ -6,13 +6,13 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:29:11 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/12 17:35:44 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/12 21:19:08 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long.h"
 
-static size_t ft_lines_of_map(char **av)
+static size_t	ft_lines_of_map(char **av)
 {
 	int		fd;
 	char	*line;
@@ -35,9 +35,11 @@ static size_t ft_lines_of_map(char **av)
 
 static char	*strcpy_to_line(char *map, char *line)
 {
-	int j = 0;
+	int	j;
+
+	j = 0;
 	map = ft_calloc(ft_strlen(line), sizeof(char));
-	while(line[j] != '\n')
+	while (line[j] != '\n')
 	{
 		map[j] = line[j];
 		j++;
