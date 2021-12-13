@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 20:31:50 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/12 21:17:22 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/13 10:21:42 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ int	ft_count_map_chars(char **map, char c)
 	while (map[i])
 	{
 		trigger += count_chars(c, map[i]);
-		if (trigger < 1)
-			return (0);
+		if (trigger >= 1)
+			return (1);
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
 int	check_CE0(char **map)

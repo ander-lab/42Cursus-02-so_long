@@ -6,13 +6,20 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 11:11:34 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/12 21:15:46 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/13 13:32:34 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long.h"
 
-void	map_errors(int c)
+static void	leak_killer(t_map *ps)
+{
+	ft_free_matrix(ps->map);
+	free(ps->map_data.lenght_str);
+	free(ps);
+}
+
+void	map_errors(int c, t_map *ps)
 {
 	if (c == INVALID_CHAR)
 		printf("Error\nInvalid char in the map\n");
@@ -26,5 +33,8 @@ void	map_errors(int c)
 		printf("Error\nOnly one 'P' allowed");
 	else if (c == MIN_CHARS)
 		printf("Error\nThe map require almost one 'C', 'E' or '0'");
-	exit(0);
+	else if (c == INVALID_EXTENSION)
+		printf("Error\nThe extension should be .ber");
+	leak_killer(ps);
+	exit(EXIT_FAILURE);
 }

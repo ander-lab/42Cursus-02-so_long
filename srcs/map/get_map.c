@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:29:11 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/12 21:19:08 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/13 12:24:35 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static size_t	ft_lines_of_map(char **av)
 	i = 0;
 	fd = open(av[1], O_RDONLY);
 	if (fd == -1)
-		map_errors(INVALID_ACCESS);
+		return (0);
 	line = get_next_line(fd);
 	while (line)
 	{
@@ -59,7 +59,7 @@ char	**get_map(char **av)
 	map = ft_calloc(ft_lines_of_map(av), sizeof(char *));
 	fd = open(av[1], O_RDONLY);
 	if (fd == -1)
-		map_errors(INVALID_ACCESS);
+		return (0);
 	line = get_next_line(fd);
 	while (line)
 	{
@@ -68,6 +68,5 @@ char	**get_map(char **av)
 		line = get_next_line(fd);
 		i++;
 	}
-	//ft_putmatrix(map, ft_matrixlen(map));
 	return (map);
 }

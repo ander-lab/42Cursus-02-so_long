@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 19:23:32 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/12 20:17:09 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/13 12:13:51 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,32 @@ int	ft_isinvalid(int c)
 
 int	ft_is_rectangle(char **map)
 {
-	size_t			max_length;
-	size_t			min_length;
 	t_matrix_data	data;
 
 	data = ft_matrix_data(map);
-	max_length = ft_max_int(data.lenght_str);
-	min_length = ft_min_int(data.lenght_str);
-	if (max_length != min_length)
+//	for (ssize_t i = 0; i < data.line_count; i++)
+//	{
+//		printf("%zu ", data.lenght_str[i]);
+//	}
+//	printf("\nmax_length == %zu\n", data.max);
+//	printf("min_length == %zu\n", data.min);
+//	printf("lines == %zu\n", data.line_count);
+	if (data.max != data.min)
 		return (0);
-	if (max_length < data.line_count)
+	if (data.max < data.line_count)
 		return (0);
 	return (1);
+}
+
+int	check_ber(char **av)
+{
+	char	*aux;
+	size_t	i;
+
+	i = 0;
+	aux = ft_strrchr(av[1], '.');
+	if (aux[i] == '.' && aux[i + 1] == 'b' && aux[i + 2] == 'e' 
+		&& aux[i + 3] == 'r' && aux[i + 4] == '\0')
+		return (1);
+	return (0);
 }

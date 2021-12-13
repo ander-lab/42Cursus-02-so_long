@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 21:19:36 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/12 21:21:01 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/13 13:38:22 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,36 @@
 # include "mlx/mlx.h"
 # include "libft/libft.h"
 
+/*
+** MAP ERROR MACROS
+*/
+
 # define INVALID_CHAR 		0
 # define INVALID_REC 		1
 # define INVALID_ACCESS 	2
 # define INVALID_MAP_CLOSE 	3
 # define INVALID_POSITION 	4
 # define MIN_CHARS 			5
+# define INVALID_EXTENSION  6
+# define INVALID_ARGV       7
+
+/*
+** 	STRUCT'S
+*/
 
 typedef struct s_vars {
 	void			*mlx;
 	void			*win;
+}				t_vars;
+
+typedef struct s_map {
 	char			**map;
 	t_matrix_data	map_data;
-}				t_vars;
+}				t_map;
+
+/*
+** GAME MLX
+*/
 
 int		close_mlx(t_vars *vars);
 int		key_hook(int keycode, t_vars *vars);
@@ -42,8 +59,8 @@ int		key_hook(int keycode, t_vars *vars);
 */
 
 char	**get_map(char **av);
-void	check_map(t_vars *ps, char **av);
-void	map_errors(int c);
+void	check_map(t_map *ps, char **av);
+void	map_errors(int c, t_map *ps);
 
 /*
 ** Check map utils
@@ -54,5 +71,6 @@ int		ft_is_rectangle(char **map);
 int		ft_map_is_closed(char **map, t_matrix_data map_data);
 int		ft_count_positions_in_map(char **map);
 int		check_CE0(char **map);
+int		check_ber(char **av);
 
 #endif
