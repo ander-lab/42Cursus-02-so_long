@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 21:19:36 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/13 13:38:22 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/13 15:39:56 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@
 */
 
 typedef struct s_vars {
-	void			*mlx;
+	void			*ptr;
 	void			*win;
 }				t_vars;
 
 typedef struct s_map {
 	char			**map;
-	t_matrix_data	map_data;
+	t_matrix_data	data;
 }				t_map;
 
 /*
