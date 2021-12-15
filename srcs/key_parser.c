@@ -6,11 +6,16 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:26:01 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/15 15:16:34 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/15 19:02:46 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+
+static void	ft_right(t_vars *mlx, char **map)
+{
+	if (map[mlx->mario.y][mlx->mario.x + 1] != '1')
+}
 
 int	close_mlx(t_vars *vars)
 {

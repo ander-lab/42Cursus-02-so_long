@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 12:19:06 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/15 18:26:08 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/15 18:57:05 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void *ft_create_image(void *img, void *mlx_ptr, char *path)
 
 void	ft_xmp_to_struct(t_vars *mlx)
 {
-	mlx->block = ft_create_image(&mlx->block, &mlx->ptr, "./sprites/water.xpm");
-	mlx->floor = ft_create_image(&mlx->floor, &mlx->ptr, "./sprites/grass.xpm");
-	mlx->pipe = ft_create_image(&mlx->pipe, &mlx->ptr, "./sprites/hole.xpm");
-	mlx->coin.ptr = ft_create_image(&mlx->coin.ptr, &mlx->ptr, "./sprites/mush.xpm");
-	mlx->mario.ptr = ft_create_image(&mlx->mario.ptr, &mlx->ptr, "./sprites/gbl.xpm");
+	mlx->block = ft_create_image(mlx->block, mlx->ptr, "./sprites/water.xpm");
+	mlx->floor = ft_create_image(mlx->floor, mlx->ptr, "./sprites/grass.xpm");
+	mlx->pipe = ft_create_image(mlx->pipe, mlx->ptr, "./sprites/hole.xpm");
+	mlx->coin.ptr = ft_create_image(mlx->coin.ptr, mlx->ptr, "./sprites/mush.xpm");
+	mlx->mario.ptr = ft_create_image(mlx->mario.ptr, mlx->ptr, "./sprites/glr.xpm");
 }
