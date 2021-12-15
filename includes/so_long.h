@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 21:19:36 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/13 15:39:56 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/15 10:24:06 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,25 @@
 /*
 ** 	STRUCT'S
 */
+typedef struct s_mario {
+	void	*ptr;
+	size_t	x;
+	size_t	y;
+}	t_mario;
+
+typedef struct s_coin{
+	void	*ptr;
+	size_t	count;
+}	t_coin;
 
 typedef struct s_vars {
-	void			*ptr;
-	void			*win;
+	void	*ptr;
+	void	*win;
+	void	*block;
+	void	*floor;
+	void	*pipe;
+	t_mario	mario;
+	t_coin	coin;
 }				t_vars;
 
 typedef struct s_map {

@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game.c                                             :+:      :+:    :+:   */
+/*   init_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/13 15:17:45 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/15 12:49:25 by ajimenez         ###   ########.fr       */
+/*   Created: 2021/12/15 12:19:06 by ajimenez          #+#    #+#             */
+/*   Updated: 2021/12/15 12:48:57 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long.h"
-#include <stddef.h>
 
-
-void	ft_game(t_map *map, t_vars *mlx)
+void	ft_create_image(void *img, void *mlx_ptr, char *path)
 {
 	int	height;
 	int	width;
 
-	height = map->data.line_count * 64;
-	width = map->data.max * 64;
-	mlx->ptr = mlx_init();
-	mlx->win = mlx_new_window(mlx->ptr, width, height, "eskereeee");
-	//TODO --CREATE IMAGES mlx_xpm_file_to_image
-	//TODO --PRINT MAP
-	mlx_hook(mlx->win, 17, 1L << 1, close_mlx, mlx);
-	mlx_key_hook(mlx->win, key_hook, mlx);
-	mlx_loop(mlx->ptr);
+	img = mlx_xpm_file_to_image(mlx_ptr, path, &width, &height);
+	if (!img)
+		printf("error img\n");
+}
+
+void	ft_xmp_to_struct(t_vars *mlx)
+{
+	ft_create_image(mlx->block, mlx->ptr, "path");
+	ft_create_image(mlx->floor, mlx->ptr, "path");
+	ft_create_image(mlx->pipe, mlx->ptr, "path");
+	ft_create_image(mlx->coin.ptr, mlx->ptr, "path");
+	ft_create_image(mlx->mario.ptr, mlx->ptr, "path");
 }
