@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 10:29:16 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/15 12:14:33 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/15 18:12:45 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,18 @@ static	void	ft_print_map(char **map, t_vars *mlx, size_t x, size_t y)
 	}
 }
 
-void	ft_iter_map(char **map, t_vars *mlx)
+void	ft_iter_map(t_map *map, t_vars *mlx)
 {
 	size_t	x;
 	size_t	y;
 
 	y = 0;
-	x = 0;
-	while (map[y])
+	while (y < (size_t )map->data.line_count)
 	{
-		while(map[y][x])
+		x = 0;
+		while(x < (size_t )map->data.max)
 		{
-			ft_print_map(map, mlx, x, y);
+			ft_print_map(map->map, mlx, x, y);
 			x++;
 		}
 		y++;

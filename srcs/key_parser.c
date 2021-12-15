@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:26:01 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/07 17:27:14 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/15 15:16:34 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	close_mlx(t_vars *vars)
 {
 	printf("chauu\n");
-	mlx_destroy_window(vars->mlx, vars->win);
+	mlx_destroy_window(vars->ptr, vars->win);
 	exit(0);
 	return (0);
 }

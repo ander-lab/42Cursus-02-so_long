@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 21:19:36 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/15 10:24:06 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/15 18:18:17 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,12 @@ typedef struct s_map {
 ** GAME MLX
 */
 
+void	ft_game(t_map *map, t_vars *mlx);
 int		close_mlx(t_vars *vars);
 int		key_hook(int keycode, t_vars *vars);
+void	ft_init_struct_mlx(t_vars *mlx, t_map *map);
+void	ft_xmp_to_struct(t_vars *mlx);
+void	ft_iter_map(t_map *map, t_vars *mlx);
 
 /*
 ** Map ft's

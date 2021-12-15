@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:29:11 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/13 13:33:11 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/15 15:37:28 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void	check_map(t_map *ps, char **av)
 {
 	ps->map = get_map(av);
-	ps->map_data = ft_matrix_data(ps->map);
+	ps->data = ft_matrix_data(ps->map);
 	if (!get_map(av))
 		map_errors(INVALID_ACCESS, ps);
 	if (!check_ber(av))
@@ -25,7 +25,7 @@ void	check_map(t_map *ps, char **av)
 		map_errors(INVALID_CHAR, ps);
 	if (!ft_is_rectangle(ps->map))
 		map_errors(INVALID_REC, ps);
-	if (!ft_map_is_closed(ps->map, ps->map_data))
+	if (!ft_map_is_closed(ps->map, ps->data))
 		map_errors(INVALID_MAP_CLOSE, ps);
 	if (!ft_count_positions_in_map(ps->map))
 		map_errors(INVALID_POSITION, ps);

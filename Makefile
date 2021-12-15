@@ -6,12 +6,12 @@
 #    By: ajimenez <ajimenez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/04 15:26:16 by ajimenez          #+#    #+#              #
-#    Updated: 2021/12/12 20:53:05 by ajimenez         ###   ########.fr        #
+#    Updated: 2021/12/15 17:26:22 by ajimenez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -g
 MLXFLGS = -framework OpenGL -framework AppKit
 SAN		= -fsanitize=address
 LIB 	= ar -rcs
@@ -23,10 +23,13 @@ LIBP	= so_long.a
 
 NAME 	= so_long
 
-MAP 	= srcs/map/get_map.c srcs/map/map_checker.c srcs/map/map_errors.c \
+MAP = srcs/map/get_map.c srcs/map/map_checker.c srcs/map/map_errors.c \
 		  srcs/map/map_check_utils.c srcs/map/map_is_closed.c \
 		  srcs/map/map_elements.c
-SRCS	= srcs/main.c srcs/key_parser.c $(MAP) 
+
+MLX = srcs/game/init_utils.c srcs/game/game.c srcs/game/ft_print_map.c
+
+SRCS	= srcs/main.c srcs/key_parser.c srcs/init_structs.c $(MAP) $(MLX)
 
 OBJS	= $(SRCS:.c=.o)
 COMP	= $(CC) $(CFLAGS) $(SRCS) $(LIBFT) $(LIBMLX) $(MLXFLGS) -o $(NAME)
