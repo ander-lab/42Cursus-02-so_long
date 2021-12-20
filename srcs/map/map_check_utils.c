@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 19:23:32 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/20 11:26:22 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/20 12:07:38 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	ft_is_rectangle(char **map)
 	t_matrix_data	data;
 
 	data = ft_matrix_data(map);
+	free(data.lenght_str);
 	if (data.max != data.min)
 		return (0);
 	if (data.max < data.line_count)

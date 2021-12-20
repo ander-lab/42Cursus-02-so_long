@@ -6,11 +6,16 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:26:01 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/20 11:30:31 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/20 12:08:33 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+
+void lk(void)
+{
+	system("leaks -q so_long");
+}
 
 static void	ft_collect(t_vars *mlx, char **map, int y, int x)
 {
@@ -46,6 +51,8 @@ int	close_mlx(t_vars *vars, char *msg)
 {
 	printf("%s\n", msg);
 	mlx_destroy_window(vars->ptr, vars->win);
+	ft_free_matrix(vars->map.map);
+	free(vars);
 	exit(0);
 	return (0);
 }

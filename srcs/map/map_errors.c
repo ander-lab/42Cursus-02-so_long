@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 11:11:34 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/17 17:41:50 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/20 11:55:59 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ void	map_errors(int c, t_vars *ps)
 		printf("Error\nThe extension should be .ber");
 	else if (c == INVALID_ARGV)
 		printf("Error\nThe program need one map");
+	ft_free_matrix(ps->map.map);
 	exit(EXIT_FAILURE);
 }

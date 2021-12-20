@@ -6,12 +6,13 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 15:17:45 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/20 11:24:01 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/20 11:44:14 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long.h"
 #include <stddef.h>
+
 
 void	ft_game(t_vars *mlx)
 {

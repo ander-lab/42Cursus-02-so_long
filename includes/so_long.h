@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 21:19:36 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/20 11:13:44 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/20 12:04:04 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,5 @@ int		ft_count_positions_in_map(char **map);
 int		check_CE0(char **map);
 int		check_ber(char **av);
 
+void lk(void);
 #endif

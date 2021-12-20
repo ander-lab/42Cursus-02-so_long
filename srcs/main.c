@@ -6,11 +6,12 @@
 /*   By: ajimenez <ajimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 15:45:26 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/20 11:30:45 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/20 11:40:55 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+
 
 int	main(int ac, char **av)
 {

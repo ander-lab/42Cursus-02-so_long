@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:29:11 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/17 17:42:30 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/20 12:18:15 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	check_map(t_vars *ps, char **av)
 {
 	ps->map.map = get_map(av);
 	ps->map.data = ft_matrix_data(ps->map.map);
-	if (!get_map(av))
+	if (!ps->map.map)
 		map_errors(INVALID_ACCESS, ps);
 	if (!check_ber(av))
 		map_errors(INVALID_EXTENSION, ps);

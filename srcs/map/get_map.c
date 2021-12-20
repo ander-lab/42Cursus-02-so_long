@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:29:11 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/13 12:24:35 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/20 12:00:54 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,11 @@ static size_t	ft_lines_of_map(char **av)
 	line = get_next_line(fd);
 	while (line)
 	{
-		line = get_next_line(fd);
 		free(line);
+		line = get_next_line(fd);
 		i++;
 	}
+	free(line);
 	close(fd);
 	return (i + 1);
 }
