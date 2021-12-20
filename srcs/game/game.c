@@ -6,30 +6,24 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 15:17:45 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/16 18:02:44 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/20 11:24:01 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long.h"
 #include <stddef.h>
 
-
-void	ft_game(t_map *map, t_vars *mlx)
+void	ft_game(t_vars *mlx)
 {
 	int	height;
 	int	width;
 
-	height = map->data.line_count * 64;
-	width = map->data.max * 64;
+	height = mlx->map.data.line_count * 64;
+	width = mlx->map.data.max * 64;
 	mlx->ptr = mlx_init();
 	mlx->win = mlx_new_window(mlx->ptr, width, height, "eskereeee");
-	//mlx->block = mlx_xpm_file_to_image(mlx->ptr, "../../sprites/water.xpm", &x, &y);
-	//printf("%p\n", mlx_xpm_file_to_image(mlx->ptr, "../../sprites/water.xpm", &x, &y));
-	//mlx_put_image_to_window(mlx->ptr, mlx->win, mlx->block, x, y);
 	ft_xmp_to_struct(mlx);
-	ft_iter_map(map, mlx);
-	printf("y ==> %d\n", mlx->mario.y);
-	printf("x ==> %d\n", mlx->mario.x);
+	ft_iter_map(mlx);
 	mlx_hook(mlx->win, 17, 1L << 1, close_mlx, mlx);
 	mlx_key_hook(mlx->win, key_hook, mlx);
 	mlx_loop(mlx->ptr);

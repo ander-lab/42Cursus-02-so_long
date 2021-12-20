@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 10:29:16 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/16 18:02:11 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/20 11:23:44 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ static void	ft_print_mario(t_vars *mlx, int x, int y)
 	mlx_put_image_to_window(mlx->ptr, mlx->win, mlx->mario.ptr, 64 * x, 64 * y);
 	mlx->mario.x = x;
 	mlx->mario.y = y;
-//	printf("y ==> %d\n", mlx->mario.y);
-//	printf("x ==> %d\n", mlx->mario.x);
 }
 
 static	void	ft_print_map(char **map, t_vars *mlx, int x, int y)
@@ -44,18 +42,18 @@ static	void	ft_print_map(char **map, t_vars *mlx, int x, int y)
 	}
 }
 
-void	ft_iter_map(t_map *map, t_vars *mlx)
+void	ft_iter_map(t_vars *mlx)
 {
 	int	x;
 	int	y;
 
 	y = 0;
-	while (y < map->data.line_count)
+	while (y < mlx->map.data.line_count)
 	{
 		x = 0;
-		while(x < map->data.max)
+		while (x < mlx->map.data.max)
 		{
-			ft_print_map(map->map, mlx, x, y);
+			ft_print_map(mlx->map.map, mlx, x, y);
 			x++;
 		}
 		y++;

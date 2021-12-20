@@ -6,13 +6,13 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 11:11:34 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/15 17:45:36 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/17 17:41:50 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long.h"
 
-void	map_errors(int c, t_map *ps)
+void	map_errors(int c, t_vars *ps)
 {
 	ps += 0;
 	if (c == INVALID_CHAR)

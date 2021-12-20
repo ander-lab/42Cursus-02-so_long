@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 21:19:36 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/16 17:53:15 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/20 11:13:44 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,25 @@
 ** GAME MLX
 */
 
-void	ft_game(t_map *map, t_vars *mlx);
-int		close_mlx(t_vars *vars);
-int		key_hook(int keycode, t_map *map,t_vars *mlx);
+void	ft_game(t_vars *mlx);
+//void	ft_game(t_map *map, t_vars *mlx);
+int		close_mlx(t_vars *vars, char *msg);
+//int		key_hook(int keycode, t_map *map,t_vars *mlx);
+int		key_hook(int keycode, t_vars *mlx);
 void	ft_init_struct_mlx(t_vars *mlx, t_map *map);
 void	ft_xmp_to_struct(t_vars *mlx);
-void	ft_iter_map(t_map *map, t_vars *mlx);
+//void	ft_iter_map(t_map *map, t_vars *mlx);
+void	ft_iter_map(t_vars *mlx);
 
 /*
 ** Map ft's
 */
 
 char	**get_map(char **av);
-void	check_map(t_map *ps, char **av);
-void	map_errors(int c, t_map *ps);
+//void	check_map(t_map *ps, char **av);
+void	check_map(t_vars *ps, char **av);
+//void	map_errors(int c, t_map *ps);
+void	map_errors(int c, t_vars *ps);
 
 /*
 ** Check map utils

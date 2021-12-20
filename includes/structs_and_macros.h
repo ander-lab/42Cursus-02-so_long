@@ -3,12 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   structs_and_macros.h                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajimenez <ajimenez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/16 13:30:27 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/16 17:48:07 by ajimenez         ###   ########.fr       */
+/*   Created: 2021/12/20 11:29:47 by ajimenez          #+#    #+#             */
+/*   Updated: 2021/12/20 11:29:49 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef STRUCTS_AND_MACROS_H
+# define STRUCTS_AND_MACROS_H
 
 # include "libft/libft.h"
 
@@ -30,19 +33,6 @@
 # define INVALID_ARGV       7
 
 /*
-** 	STRUCT'S
-*/
-
-typedef struct s_map {
-	char			**map;
-	t_matrix_data	data;
-}				t_map;
-
-/* ************************************************************************** */
-/*                                    GAME                                    */
-/* ************************************************************************** */
-
-/*
 ** MAP ERROR MACROS
 */
 # define UP_Y		-1
@@ -60,6 +50,11 @@ typedef struct s_map {
 /*
 ** 	STRUCT'S
 */
+typedef struct s_map {
+	char			**map;
+	t_matrix_data	data;
+}				t_map;
+
 typedef struct s_mario {
 	void	*ptr;
 	int		x;
@@ -77,7 +72,9 @@ typedef struct s_vars {
 	void	*block;
 	void	*floor;
 	void	*pipe;
+	t_map	map;
 	t_mario	mario;
 	t_coin	coin;
 }				t_vars;
 
+#endif
