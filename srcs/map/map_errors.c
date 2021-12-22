@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 11:11:34 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/20 11:55:59 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/22 18:49:14 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	map_errors(int c, t_vars *ps)
 {
-	ps += 0;
 	if (c == INVALID_CHAR)
 		printf("Error\nInvalid char in the map\n");
 	else if (c == INVALID_REC)
@@ -30,7 +29,10 @@ void	map_errors(int c, t_vars *ps)
 	else if (c == INVALID_EXTENSION)
 		printf("Error\nThe extension should be .ber");
 	else if (c == INVALID_ARGV)
+	{
 		printf("Error\nThe program need one map");
+		exit(EXIT_FAILURE);
+	}
 	ft_free_matrix(ps->map.map);
 	exit(EXIT_FAILURE);
 }

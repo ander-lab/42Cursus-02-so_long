@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 11:29:47 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/20 11:29:49 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/22 18:42:41 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ typedef struct s_map {
 	t_matrix_data	data;
 }				t_map;
 
-typedef struct s_mario {
+typedef struct s_player {
 	void	*ptr;
 	int		x;
 	int		y;
@@ -71,9 +71,9 @@ typedef struct s_vars {
 	void	*win;
 	void	*block;
 	void	*floor;
-	void	*pipe;
+	void	*exit;
 	t_map	map;
-	t_mario	mario;
+	t_mario	player;
 	t_coin	coin;
 }				t_vars;
 

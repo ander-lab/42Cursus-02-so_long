@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:26:01 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/20 12:08:33 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/22 18:45:48 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,24 @@ void lk(void)
 static void	ft_collect(t_vars *mlx, char **map, int y, int x)
 {
 	mlx->coin.count--;
-	map[mlx->mario.y + y][mlx->mario.x + x] = '0';
+	map[mlx->player.y + y][mlx->player.x + x] = '0';
 }
 
 static void	ft_cover_map(t_vars *mlx, int y, int x)
 {
 	mlx_put_image_to_window(mlx->ptr, mlx->win, mlx->floor,
-		mlx->mario.x * 64, mlx->mario.y * 64);
-	mlx->mario.y += y;
-	mlx->mario.x += x;
-	mlx_put_image_to_window(mlx->ptr, mlx->win, mlx->mario.ptr,
-		mlx->mario.x * 64, mlx->mario.y * 64);
+		mlx->player.x * 64, mlx->player.y * 64);
+	mlx->player.y += y;
+	mlx->player.x += x;
+	mlx_put_image_to_window(mlx->ptr, mlx->win, mlx->player.ptr,
+		mlx->player.x * 64, mlx->player.y * 64);
 }
 
 static void	ft_move(t_vars *mlx, char **map, int y, int x)
 {
 	char	point;
 
-	point = map[mlx->mario.y + y][mlx->mario.x + x];
+	point = map[mlx->player.y + y][mlx->player.x + x];
 	if ((point == '1') || (point == 'E' && mlx->coin.count > 0))
 		return ;
 	if (point == 'C')
