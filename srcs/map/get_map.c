@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:29:11 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/20 12:00:54 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/23 14:33:16 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ static char	*strcpy_to_line(char *map, char *line)
 
 	j = 0;
 	map = ft_calloc(ft_strlen(line), sizeof(char));
+	if (!map)
+		return (0);
 	while (line[j] != '\n')
 	{
 		map[j] = line[j];
@@ -64,7 +66,10 @@ char	**get_map(char **av)
 	line = get_next_line(fd);
 	while (line)
 	{
-		map[i] = strcpy_to_line(map[i], line);
+		if (ft_strchr(line, '\n'))
+			map[i] = strcpy_to_line(map[i], line);
+		else
+			map[i] = ft_strdup(line);
 		free(line);
 		line = get_next_line(fd);
 		i++;
