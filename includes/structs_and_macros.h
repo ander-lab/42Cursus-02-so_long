@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 11:29:47 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/22 18:42:41 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/23 13:08:57 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ typedef struct s_coin{
 }	t_coin;
 
 typedef struct s_vars {
+	size_t	moves;
 	void	*ptr;
 	void	*win;
 	void	*block;

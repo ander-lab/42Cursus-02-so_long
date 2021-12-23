@@ -6,7 +6,7 @@
 #    By: ajimenez <ajimenez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/04 15:26:16 by ajimenez          #+#    #+#              #
-#    Updated: 2021/12/15 17:26:22 by ajimenez         ###   ########.fr        #
+#    Updated: 2021/12/23 13:06:17 by ajimenez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,13 +23,14 @@ LIBP	= so_long.a
 
 NAME 	= so_long
 
-MAP = srcs/map/get_map.c srcs/map/map_checker.c srcs/map/map_errors.c \
-		  srcs/map/map_check_utils.c srcs/map/map_is_closed.c \
-		  srcs/map/map_elements.c
+MAP = 	 srcs/map/get_map.c srcs/map/map_checker.c srcs/map/map_errors.c \
+		 srcs/map/map_check_utils.c srcs/map/map_is_closed.c \
+		 srcs/map/map_elements.c
 
-MLX = srcs/game/init_utils.c srcs/game/game.c srcs/game/ft_print_map.c
+MLX =   srcs/game/init_utils.c srcs/game/game.c srcs/game/ft_print_map.c \
+		 srcs/game/key_parser.c
 
-SRCS	= srcs/main.c srcs/key_parser.c srcs/init_structs.c $(MAP) $(MLX)
+SRCS	= srcs/main.c $(MAP) $(MLX)
 
 OBJS	= $(SRCS:.c=.o)
 COMP	= $(CC) $(CFLAGS) $(SRCS) $(LIBFT) $(LIBMLX) $(MLXFLGS) -o $(NAME)

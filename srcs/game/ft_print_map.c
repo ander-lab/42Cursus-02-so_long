@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 10:29:16 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/22 18:43:44 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/23 13:17:06 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ static void	ft_print_coin(t_vars *mlx, int x, int y)
 
 static void	ft_print_mario(t_vars *mlx, int x, int y)
 {
-	mlx_put_image_to_window(mlx->ptr, mlx->win, mlx->player.ptr, 64 * x, 64 * y);
+	mlx_put_image_to_window(mlx->ptr, mlx->win, mlx->player.ptr,
+		64 * x, 64 * y);
 	mlx->player.x = x;
 	mlx->player.y = y;
 }

@@ -6,16 +6,11 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:26:01 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/22 18:45:48 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/23 13:23:53 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
-
-void lk(void)
-{
-	system("leaks -q so_long");
-}
+#include "../../includes/so_long.h"
 
 static void	ft_collect(t_vars *mlx, char **map, int y, int x)
 {
@@ -40,6 +35,8 @@ static void	ft_move(t_vars *mlx, char **map, int y, int x)
 	point = map[mlx->player.y + y][mlx->player.x + x];
 	if ((point == '1') || (point == 'E' && mlx->coin.count > 0))
 		return ;
+	mlx->moves++;
+	printf("Number of movements: %zu\n", mlx->moves);
 	if (point == 'C')
 		ft_collect(mlx, map, y, x);
 	else if (point == 'E' && mlx->coin.count == 0)
