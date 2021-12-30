@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 15:45:26 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/23 14:35:29 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/30 12:05:55 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ int	main(int ac, char **av)
 
 	mlx = NULL;
 	if (ac != 2)
-		map_errors(INVALID_ARGV, mlx);
+	{
+		printf("Error\nThe program need one map");
+		return (0);
+	}
 	mlx = ft_calloc(1, sizeof(t_vars));
 	mlx->moves = 0;
 	check_map(mlx, av);
