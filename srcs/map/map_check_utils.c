@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 19:23:32 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/12/20 12:07:38 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/12/30 11:45:51 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int	check_ber(char **av)
 
 	i = 0;
 	aux = ft_strrchr(av[1], '.');
+	if (!aux)
+		return (0);
 	if (aux[i] == '.' && aux[i + 1] == 'b' && aux[i + 2] == 'e'
 		&& aux[i + 3] == 'r' && aux[i + 4] == '\0')
 		return (1);
